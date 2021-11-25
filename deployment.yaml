@@ -34,8 +34,8 @@ spec:
                 secretKeyRef:
                   key: CLIENT_ID
                   name: discord-secrets
-        imagePullSecrets:
-        - name: ghcr-secret
+    imagePullSecrets:
+    - name: ghcr-secret
   selector:
     matchLabels:
       app: soe-chobot

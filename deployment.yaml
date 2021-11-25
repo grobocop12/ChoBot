@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: soe-chobot
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: soe-chobot
+    spec:
+      containers:
+      - name: soe-chobot
+        image: ghcr.io/sigmasuite/ChoBot:main
+        imagePullPolicy: Always
+        env:
+            - name: DISCORD_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  key: DISCORD_TOKEN
+                  name: discord-secrets
+            - name: GUILD_ID
+              valueFrom:
+                secretKeyRef:
+                  key: GUILD_ID
+                  name: discord-secrets
+            - name: DEV_GUILD_ID
+              valueFrom:
+                secretKeyRef:
+                  key: DEV_GUILD_ID
+                  name: discord-secrets
+            - name: CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: CLIENT_ID
+                  name: discord-secrets
+        imagePullSecrets:
+        - name: ghcr-secret
+  selector:
+    matchLabels:
+      app: soe-chobot

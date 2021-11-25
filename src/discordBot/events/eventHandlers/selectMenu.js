@@ -3,7 +3,7 @@ const { fetchTogetherLink } = require("../../commands/watchTogether");
 async function handleMenuSelect(interaction) {
   if (interaction.customId === "select") {
     const invitationCode = await fetchTogetherLink(
-      interaction.channel.id,
+      "297117889172078594",
       interaction.values[0]
     );
     await interaction.deferUpdate();

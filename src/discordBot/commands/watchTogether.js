@@ -81,6 +81,11 @@ async function execute(interaction) {
           description: "Spellcast",
           value: "852509694341283871",
         },
+        {
+          label: "YoutubeDev",
+          description: "YoutubeDev",
+          value: "880218832743055411",
+        },
       ])
   );
   await interaction.reply({

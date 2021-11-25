@@ -9,6 +9,8 @@ spec:
       labels:
         app: soe-chobot
     spec:
+      imagePullSecrets:
+      - name: ghcr-secret
       containers:
       - name: soe-chobot
         image: ghcr.io/sigmasuite/ChoBot:main
@@ -34,8 +36,6 @@ spec:
                 secretKeyRef:
                   key: CLIENT_ID
                   name: discord-secrets
-    imagePullSecrets:
-    - name: ghcr-secret
   selector:
     matchLabels:
       app: soe-chobot

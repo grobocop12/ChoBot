@@ -67,19 +67,34 @@ async function execute(interaction) {
           value: "832012774040141894",
         },
         {
-          label: "Fishing",
-          description: "StarDewValley fishing",
-          value: "814288819477020702",
-        },
-        {
-          label: "Awkword",
-          description: "Awkword",
-          value: "879863881349087252",
-        },
-        {
           label: "Spellcast",
-          description: "Spellcast",
+          description: "Scrabble",
           value: "852509694341283871",
+        },
+        {
+          label: "LetterTile",
+          description: "Nw",
+          value: togetherCodes.lettertile,
+        },
+        {
+          label: "Poker",
+          description: "Zagraj o ogromne pieniadze",
+          value: togetherCodes.poker,
+        },
+        {
+          label: "Doodlecrew",
+          description: "Kalambury",
+          value: togetherCodes.doodlecrew,
+        },
+        {
+          label: "WordSnack",
+          description: "Nw",
+          value: togetherCodes.wordsnack,
+        },
+        {
+          label: "Puttparty",
+          description: "Nw",
+          value: togetherCodes.puttparty,
         },
         {
           label: "YoutubeDev",

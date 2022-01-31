@@ -11,8 +11,8 @@ async function execute(player, interaction) {
   try {
     if (!queue.connection)
       await queue.connect(interaction.member.voice.channel);
-  } catch {
-    queue.destroy();
+  } catch (err) {
+    await queue.destroy();
     return interaction.reply({
       content: "Could not join your voice channel!",
       ephemeral: true,
@@ -25,13 +25,14 @@ async function execute(player, interaction) {
       requestedBy: interaction.user,
     })
     .then((x) => x.tracks[0]);
-  if (!track)
+  if (!track) {
     return interaction.followUp({
       content: `Track **${query}** not found!`,
       ephemeral: true,
     });
+  }
 
-  queue.play(track);
+  await queue.play(track);
   return interaction.followUp({
     content: `Playing **${track.title}**!`,
   });

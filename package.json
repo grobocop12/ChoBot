@@ -17,7 +17,7 @@
     "joi": "^17.4.2",
     "websocket": "^1.0.34",
     "ytdl": "^1.4.1",
-    "ytdl-core": "^4.9.1"
+    "ytdl-core": "^4.10.0"
   },
   "devDependencies": {
     "eslint": "^8.2.0",

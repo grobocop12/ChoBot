@@ -36,6 +36,11 @@ spec:
                 secretKeyRef:
                   key: CLIENT_ID
                   name: discord-secrets
+            - name: CHANNEL_ID
+              valueFrom:
+                secretKeyRef:
+                  key: CHANNEL_ID
+                  name: discord-secrets
   selector:
     matchLabels:
       app: soe-chobot

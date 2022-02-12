@@ -1,12 +1,14 @@
 const { fetchTogetherLink } = require("../../commands/watchTogether");
-
-const channelId = process.env.CHANNEL_ID;
+const { fetchChannelsList } = require("../../commands/selectChannel");
 
 async function handleMenuSelect(interaction) {
-  if (interaction.customId === "select") {
+  if (interaction.customId === "selectTogether") {
+    await fetchChannelsList(interaction, interaction.values[0])
+  } else if (interaction.customId === "selectVoiceChannel") {
+    const value = JSON.parse(interaction.values[0]);
     const invitationCode = await fetchTogetherLink(
-      channelId,
-      interaction.values[0]
+      value.channelId,
+      value.togetherCode
     );
     await interaction.deferUpdate();
     await interaction.editReply({

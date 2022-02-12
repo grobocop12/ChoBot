@@ -51,7 +51,7 @@ async function fetchTogetherLink(channelId, gameId) {
 async function execute(interaction) {
   const row = new MessageActionRow().addComponents(
     new MessageSelectMenu()
-      .setCustomId("select")
+      .setCustomId("selectTogether")
       .setPlaceholder("Nothing selected")
       .addOptions([
         {
@@ -99,8 +99,7 @@ async function execute(interaction) {
           description: "YoutubeDev",
           value: "880218832743055411",
         },
-      ])
-  );
+      ]));
   await interaction.reply({
     content: "Select Discord Together Option",
     components: [row],

@@ -3,7 +3,7 @@ const { Player } = require("discord-player");
 const handleMenuSelect = require("./events/eventHandlers/selectMenu");
 const handleSlashCommands = require("./events/eventHandlers/slashCommands");
 const registerEvents = require("./events/events");
-const registerCommands = require("./commands/commands");
+const { registerCommands } = require("./commands/commands");
 
 const client = new Client({
   intents: [

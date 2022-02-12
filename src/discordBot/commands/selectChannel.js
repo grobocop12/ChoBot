@@ -24,7 +24,8 @@ async function fetchChannelsList(interaction, togetherCode) {
         .setCustomId("selectVoiceChannel")
         .setPlaceholder("Nothing selected")
         .addOptions(options));
-    await interaction.reply({
+    await interaction.deferUpdate();
+    await interaction.editReply({
         content: "Select Voice Channel",
         components: [row],
     });

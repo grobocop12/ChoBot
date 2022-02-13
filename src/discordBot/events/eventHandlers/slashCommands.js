@@ -1,13 +1,14 @@
+const { commandHandlers } = require('../../commands/commands');
+
+const musicCommands = ["play", "fs"];
+
 async function handleSlashCommands(interaction, client, player) {
-  const command = client.commands.get(interaction.commandName);
-  if (!command) return;
-  const musicCommands = ["play", "fs"];
   try {
-    if (musicCommands.includes(command.data.name)) {
-      await command.execute(player, interaction);
+    if (musicCommands.includes(interaction.commandName)) {
+      await commandHandlers.get(interaction.commandName)(player, interaction);
       return;
     }
-    await command.execute(interaction);
+    await commandHandlers.get(interaction.commandName)(interaction);
   } catch (error) {
     console.error(error);
   }

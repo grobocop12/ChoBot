@@ -16,11 +16,11 @@ const client = new Client({
 });
 const player = new Player(client);
 client.commands = new Collection();
-registerCommands(client);
-registerEvents(client);
 
 client.once("ready", () => {
-  console.log("Ready!");
+  registerCommands(client);
+  registerEvents(client);
+  console.log('bot is up!');
 });
 
 client.on("interactionCreate", async (interaction) => {

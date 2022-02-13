@@ -5,8 +5,9 @@ const { together } = require("./watchTogether");
 const commands = [play, skip, together];
 
 function registerCommands(client) {
-  commands.forEach((command) => {
-    client.commands.set(command.data.name, command);
+  const commandsData = commands.map((command) => command.data);
+  client.guilds.cache.forEach((guild, key, map) => {
+    guild.commands.set(commandsData);
   });
 }
 

@@ -21,20 +21,10 @@ spec:
                 secretKeyRef:
                   key: DISCORD_TOKEN
                   name: discord-secrets
-            - name: GUILD_ID
+            - name: STREAM_ADDRESS
               valueFrom:
                 secretKeyRef:
-                  key: GUILD_ID
-                  name: discord-secrets
-            - name: DEV_GUILD_ID
-              valueFrom:
-                secretKeyRef:
-                  key: DEV_GUILD_ID
-                  name: discord-secrets
-            - name: CLIENT_ID
-              valueFrom:
-                secretKeyRef:
-                  key: CLIENT_ID
+                  key: STREAM_ADDRESS
                   name: discord-secrets
   selector:
     matchLabels:

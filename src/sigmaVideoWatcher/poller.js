@@ -1,4 +1,5 @@
 const WebSocketClient = require("websocket").client;
+const { streamAddress } = require("../../config/discord");
 
 async function sleep(time) {
   return new Promise((resolve) => {
@@ -66,7 +67,7 @@ function pollForStream(botClient) {
 
     sendOffer();
   });
-  client.connect("ws://sigmasuite.ddns.net:3333/app/stream");
+  client.connect(streamAddress);
 }
 
 module.exports = pollForStream;

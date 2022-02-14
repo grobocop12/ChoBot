@@ -1,5 +1,4 @@
 const WebSocketClient = require("websocket").client;
-const { streamAddress } = require("../../config/discord");
 
 async function sleep(time) {
   return new Promise((resolve) => {
@@ -15,7 +14,7 @@ const streamServer = {
   lastTimeOnline: null,
 };
 
-function pollForStream(botClient) {
+function pollForStream(botClient, streamAddress) {
   const client = new WebSocketClient();
 
   client.on("connectFailed", async (error) => {
